@@ -1,0 +1,121 @@
+.coffee {
+  &-img {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: .7rem;
+    height: 150px;
+
+    img {
+      object-fit: cover;
+    }
+
+    .popular {
+      position: relative;
+      padding: .25rem 1rem;
+      border-radius: calc(var(--radius) * 2);
+      background-color: var(--clr-yellow-light);
+      color: var(--clr-dark);
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      left: .5rem;
+      top: .5rem;
+    }
+
+  }
+
+  &-name, &-rating {
+    color: var(--clr-light);
+    font-weight: 600;
+  }
+
+  &-price {
+    border-radius: var(--radius);
+    background-color: var(--clr-light-green);
+    color: var(--clr-body-bg);
+    font-weight: 600;
+    padding: .25rem .5rem;
+    font-size: 14px;
+  }
+
+  &-sold-out {
+    color: var(--clr-red-light);
+    font-weight: 500;
+  }
+
+  .flex-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+  }
+
+  .rating, .no-rating {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    font-size: 14px;
+  }
+
+  &-skeleton {
+    .skeleton {
+      animation: skeleton 1.5s infinite linear;
+      background: linear-gradient(
+          90deg,
+          var(--clr-skeleton) 0%,
+          var(--clr-skeleton-light) 50%,
+          var(--clr-skeleton) 100%
+      );
+      background-size: 400% 400%;
+
+      @keyframes skeleton {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: -135% 0%;
+        }
+      }
+
+    }
+
+    .coffee-img {
+      img {
+        object-fit: contain;
+      }
+    }
+
+    .coffee-name, .coffee-rating, .coffee-price, .coffee-sold-out {
+      height: 1rem;
+      width: 30%;
+    }
+
+    .coffee-price {
+      width: 40%;
+    }
+
+    .coffee-rating {
+      width: 50%;
+    }
+  }
+}
+
+
+.coffee-list {
+  display: grid;
+  margin: 0 auto;
+  gap: 2rem;
+  max-width: 250px;
+
+  @media screen and (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 540px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 768px;
+    row-gap: 4rem;
+  }
+}

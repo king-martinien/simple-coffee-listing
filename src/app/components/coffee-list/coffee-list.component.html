@@ -1,0 +1,9 @@
+@defer () {
+  <div class="coffee-list">
+    @for (coffee of coffeeList;track coffee.id) {
+      <app-coffee [coffee]="coffee"/>
+    }
+  </div>
+} @placeholder (minimum 1s) {
+  <app-coffee-list-skeleton/>
+}

@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap');
+
+:root {
+  /* COLORS */
+  --clr-light: #FEF7EE;
+  --clr-light-green: #BEE3CC;
+  --clr-red-light: #ED735D;
+  --clr-yellow-light: #F6C768;
+  --clr-gray-light: #6F757C;
+  --clr-body-bg: #111315;
+  --clr-dark: #1B1D1F;
+  --clr-skeleton: #3d3d3f;
+  --clr-skeleton-light: #4d4d4f;
+
+  /* FONTS */
+  --font-dm-sans: 'DM Sans', sans-serif;
+
+  /* RADIUS */
+  --radius: 0.5rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+  font-family: var(--font-dm-sans);
+  background-color: var(--clr-body-bg);
+  color: var(--clr-gray-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  color: var(--clr-light);
+  border-radius: var(--radius);
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+@import "assets/scss/components";
